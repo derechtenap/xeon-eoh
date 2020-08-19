@@ -6,3 +6,5 @@
 ![GitHub](https://img.shields.io/github/license/derechtenap/xeon-empire-of-heroes?style=flat-square)
 ## Introduction
 *Xeon - Empire of Heroes* is an small tatical browser game.
+## License
+Code released under the [MIT License](https://github.com/derechtenap/xeon-empire-of-heroes/blob/master/LICENSE).
