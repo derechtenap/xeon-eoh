@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fight...</title>
+    <link rel="stylesheet" href="../frontend/css/xeon.min.css">
+    <title>Fight</title>
 </head>
-<body>
-    <h1>Fight</h1>
+
+<body class="row">
+    <main class="col-8">
+        <a href="#">&larr;</a>
+        <div>Progress: 1 / 10</div>
+        <div class="enemy-container">
+            <div class="enemy" data-enemy-id="1">
+                <progress max="10" value="10"></progress>
+                <img src="https://via.placeholder.com/150x250" alt="Enemy">
+            </div>
+            <div class="enemy" data-enemy-id="2">
+                <progress max="10" value="10"></progress>
+                <img src="https://via.placeholder.com/150x250" alt="Enemy">
+            </div>
+            <div class="enemy" data-enemy-id="3">
+                <progress max="10" value="10"></progress>
+                <img src="https://via.placeholder.com/150x250" alt="Enemy">
+            </div>
+        </div>
+    </main>
+    <aside class="col-4">
+        <ul>
+            <li>Level: 1</li>
+            <li>HP: 25 HP</li>
+            <li>ATT: 5 DMG</li>
+            <li>Gold: 120 G</li>
+        </ul>
+        <button>PRIMARY_WEAPON</button>
+        <button>SECONDARY_WEAPON</button>
+        <button>INVENTORY</button>
+        <!-- PLAYER HP -->
+        <progress max="10" value="10"></progress>
+    </aside>
 </body>
+
 </html>
