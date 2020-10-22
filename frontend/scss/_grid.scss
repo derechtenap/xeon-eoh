@@ -1,0 +1,44 @@
+@charset 'UTF-8';
+
+// Container ------------------------------------
+// Basic container class
+// Uses 100% width at small breakpoint
+.container {
+    width: 100%;
+    max-width: calc(100% - 10rem);
+    margin: 0 auto;
+
+    // Small
+    @media screen and (max-width: $small) {
+        max-width: 100%;
+    }
+}
+
+// Grid system ----------------------------------
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// Columns
+// Default: 12 cols per row
+@for $i from 1 through $cols {
+    .col-#{$i} {
+        flex: 0 0 100% / $cols * $i
+    }
+
+    .col-offset-#{$i} {
+        margin-left: 100% / $cols * $i;
+    }
+}
+
+// Set cols on small breakpoint to full width
+@media all and (max-width: $small) {
+    [class*="col-"] {
+        flex: 0 0 100%;
+    }
+
+    [class*="col-offset-"] {
+        margin-left: 0;
+    }
+}
