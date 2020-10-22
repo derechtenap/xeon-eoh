@@ -1,0 +1,7 @@
+@charset 'UTF-8';
+
+// Fight screen
+#fight-main,
+#fight-aside {
+    min-height: calc(100vh - 6rem); // Minus padding
+}

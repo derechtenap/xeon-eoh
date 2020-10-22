@@ -1,0 +1,111 @@
+@charset 'UTF-8';
+
+// Backgrounds
+
+@each $name,
+$color in $scheme {
+    .bg-#{$name} {
+        background-color: $color;
+    }
+}
+
+// Text colors
+
+@each $name,
+$color in $scheme {
+    .text-#{$name} {
+        color: $color;
+    }
+}
+
+// Spacer
+
+@each $x in $spacing-amount {
+    .m-#{$x} {
+        margin: #{$x}rem !important;
+    }
+
+    .mt-#{$x},
+    .my-#{$x} {
+        margin-top: #{$x}rem !important;
+    }
+
+    .mb-#{$x},
+    .my-#{$x} {
+        margin-bottom: #{$x}rem !important;
+    }
+
+    .ml-#{$x},
+    .mx-#{$x} {
+        margin-left: #{$x}rem !important;
+    }
+
+    .mr-#{$x},
+    .mx-#{$x} {
+        margin-right: #{$x}rem !important;
+    }
+}
+
+@each $y in $spacing-amount {
+    .p-#{$y} {
+        padding: #{$y}rem !important;
+    }
+
+    .pt-#{$y},
+    .py-#{$y} {
+        padding-top: #{$y}rem !important;
+    }
+
+    .pb-#{$y},
+    .py-#{$y} {
+        padding-bottom: #{$y}rem !important;
+    }
+
+    .pl-#{$y},
+    .px-#{$y} {
+        padding-left: #{$y}rem !important;
+    }
+
+    .pr-#{$y},
+    .px-#{$y} {
+        padding-right: #{$y}rem !important;
+    }
+}
+
+// Border
+
+.border {
+    border: 1px solid map-get($scheme, dark);
+}
+
+// List
+
+.list-unstyled {
+    list-style: none;
+    padding-left: 0;
+}
+
+// Text Utils
+.text-l {
+    text-align: left;
+}
+
+.text-c {
+    text-align: center;
+}
+
+.text-r {
+    text-align: right;
+}
+
+.text-j {
+    text-align: justify;
+}
+
+.text-up {
+    text-transform: uppercase;
+}
+
+.text-bold {
+    font-weight: bold;
+}
