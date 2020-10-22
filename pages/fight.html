@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fight...</title>
+    <link rel="stylesheet" href="../frontend/css/xeon.min.css">
+    <title>Fight</title>
 </head>
-<body>
-    <h1>Fight</h1>
+
+<body class="row bg-brown p-3">
+    <main class="col-8 px-3">
+        <div class="border bg-green" id="fight-main">
+            <div class="row pt-1 px-1 bg-dark text-white">
+                <div class="col-6">
+                    <h1>&larr;</h1>
+                </div>
+                <div class="col-6 text-r">
+                    <h2>Progress: 1 / 10</h2>
+                </div>
+            </div>
+            <!-- ENV -->
+            <div id="enemy-container" class="row py-5">
+                <div class="col-4 px-1">
+                    <progress style="width: 280px;" value="4" max="10"></progress>
+                    <img src="https://placehold.it/280x300" alt="Enemy">
+                </div>
+                <div class="col-4 px-1">
+                    <progress style="width: 280px;" value="6" max="10"></progress>
+                    <img src="https://placehold.it/280x300" alt="Enemy">
+                </div>
+                <div class="col-4 px-1">
+                    <progress style="width: 280px;" value="10" max="10"></progress>
+                    <img src="https://placehold.it/280x300" alt="Enemy">
+                </div>
+            </div>
+        </div>
+    </main>
+    <aside class="col-4 bg-dark-brown text-white border p-3" id="fight-aside">
+        <h2>Stats</h2>
+        <div class="row mb-1">
+            <div class="col-8">Level</div>
+            <div class="col-4 text-r text-bold">1</div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-8">Attack</div>
+            <div class="col-4 text-r text-bold">1 DMG</div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-8">Healthpoints</div>
+            <div class="col-4 text-r text-bold">25 HP</div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-8">Gold</div>
+            <div class="col-4 text-r text-bold">120 G</div>
+        </div>
+    </aside>
 </body>
+
 </html>

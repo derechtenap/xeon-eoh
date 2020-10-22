@@ -5,3 +5,17 @@ $cols: 12;
 
 // Breakpoints
 $small: 576px;
+$medium: 768px;
+$large: 992px;
+$xlarge: 1200px;
+
+// Colors
+$scheme: ('dark-brown': #463730,
+    'brown': #e4bb97,
+    'light-brown': eee0cb,
+    'green': #498467,
+    'dark': #051014,
+    'white': #fafafa);
+
+// Spacing steps
+$spacing-amount: (0, 1, 2, 3, 4, 5);
