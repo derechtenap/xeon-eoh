@@ -3,7 +3,7 @@
 // Backgrounds
 
 @each $name,
-$color in $scheme {
+$color in $cl-main {
     .bg-#{$name} {
         background-color: $color;
     }
@@ -12,7 +12,7 @@ $color in $scheme {
 // Text colors
 
 @each $name,
-$color in $scheme {
+$color in $cl-main {
     .text-#{$name} {
         color: $color;
     }
@@ -75,7 +75,7 @@ $color in $scheme {
 // Border
 
 .border {
-    border: 1px solid map-get($scheme, dark);
+    border: 1px solid map-get($cl-main, dark);
 }
 
 // List

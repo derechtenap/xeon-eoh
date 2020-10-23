@@ -1,21 +1,42 @@
 @charset 'UTF-8';
 
-// Grid & Layout
-$cols: 12;
+// Darkmode --------------------------------------------------------------
+// Curently disabled. Probably not unnecessary in this project
+$darkmode: false !default;
 
-// Breakpoints
-$small: 576px;
-$medium: 768px;
-$large: 992px;
-$xlarge: 1200px;
+// Typical Device Breakpoints --------------------------------------------
+// xsm -- Extra small devices (phones)
+// sma -- Small devices (portrait tablets and large phones)
+// med -- Medium devices (landscape tablets)
+// lar -- Large devices (laptops and small desktops)
+// xla -- Extra large devices (Large laptops and desktops)
 
-// Colors
-$scheme: ('dark-brown': #463730,
-    'brown': #e4bb97,
-    'light-brown': eee0cb,
-    'green': #498467,
-    'dark': #051014,
-    'white': #fafafa);
+$breakpoints: ('xsm': 0px,
+    'sma': 600px,
+    'med': 768px,
+    'lar': 992px,
+    'xla': 1200px) !default;
 
-// Spacing steps
+// Colors Schemes --------------------------------------------------------
+// Contains often used colors
+
+$cl-main: ('dark': #051014,
+    'dark-brown': #463730,
+    'brown': #baa898,
+    'desert': #e4bb97,
+    'alice': #e9f1f7,
+    'champagne': #eee0cb,
+    'linen': #f3e9dc,
+    'red': #a31621,
+    'blue': #3185fc,
+    'green': #498467) !default;
+
+// Spacing  --------------------------------------------------------------
+// Creates margin and padding classes for each number in REM 
+
 $spacing-amount: (0, 1, 2, 3, 4, 5);
+
+// Grid ------------------------------------------------------------------
+// Defines the number of columns that are supported by the grid
+
+$cols: 12;

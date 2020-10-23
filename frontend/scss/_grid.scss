@@ -9,7 +9,7 @@
     margin: 0 auto;
 
     // Small
-    @media screen and (max-width: $small) {
+    @media screen and (max-width: map-get($breakpoints, "sma")) {
         max-width: 100%;
     }
 }
@@ -33,7 +33,7 @@
 }
 
 // Set cols on small breakpoint to full width
-@media all and (max-width: $small) {
+@media all and (max-width: map-get($breakpoints, "sma")) {
     [class*="col-"] {
         flex: 0 0 100%;
     }
