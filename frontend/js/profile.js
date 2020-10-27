@@ -51,14 +51,17 @@ function setLevel(newLevel){
 
 function setAttackDamage(damageValue){
     this.attackDamage = damageValue;
+    updateAttackDamage();
 }
 
 function setHealthPoints(healthValue){
     this.healthPoints = healthValue;
+    updateHealthPoints();
 }
 
-function setgold(goldValue){
+function setGold(goldValue){
     this.gold = goldValue;
+    updateGoldValue();
 }
 
 //Getter
