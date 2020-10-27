@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../frontend/css/xeon.min.css">
+    <script src="../frontend/js/fight.js" defer></script>
+    <script src="../frontend/js/profile.js" defer></script>
     <title>Fight</title>
 </head>
 
@@ -22,16 +24,16 @@
             <!-- ENV -->
             <div id="enemy-container" class="row py-5">
                 <div class="col-4 px-1">
-                    <progress style="width: 280px;" value="4" max="10"></progress>
-                    <img src="https://placehold.it/280x300" alt="Enemy">
+                    <progress id="progressEnemyOne" style="width: 280px;" value="4" max="100"></progress>
+                    <img id="enemyOne" src="https://placehold.it/280x300" alt="Enemy">
                 </div>
                 <div class="col-4 px-1">
-                    <progress style="width: 280px;" value="6" max="10"></progress>
-                    <img src="https://placehold.it/280x300" alt="Enemy">
+                    <progress id="progressEnemyTwo" style="width: 280px;" value="6" max="100"></progress>
+                    <img id="enemyTwo" src="https://placehold.it/280x300" alt="Enemy">
                 </div>
                 <div class="col-4 px-1">
-                    <progress style="width: 280px;" value="10" max="10"></progress>
-                    <img src="https://placehold.it/280x300" alt="Enemy">
+                    <progress id="progressEnemyThree" style="width: 280px;" value="10" max="100"></progress>
+                    <img id="enemyThree" src="https://placehold.it/280x300" alt="Enemy">
                 </div>
             </div>
         </div>
@@ -40,19 +42,19 @@
         <h2>Stats</h2>
         <div class="row mb-1">
             <div class="col-8">Level</div>
-            <div class="col-4 text-r text-bold">1</div>
+            <div id="userLevel" class="col-4 text-r text-bold">1</div>
         </div>
         <div class="row mb-1">
             <div class="col-8">Attack</div>
-            <div class="col-4 text-r text-bold">1 DMG</div>
+            <div id="userAttackDamage" class="col-4 text-r text-bold">1 DMG</div>
         </div>
         <div class="row mb-1">
             <div class="col-8">Healthpoints</div>
-            <div class="col-4 text-r text-bold">25 HP</div>
+            <div id="userHealth" class="col-4 text-r text-bold">25 HP</div>
         </div>
         <div class="row mb-1">
             <div class="col-8">Gold</div>
-            <div class="col-4 text-r text-bold">120 G</div>
+            <div id="userGold" class="col-4 text-r text-bold">120 G</div>
         </div>
     </aside>
 </body>
