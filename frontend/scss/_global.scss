@@ -18,60 +18,6 @@ $color in $cl-main {
     }
 }
 
-// Spacer
-
-@each $x in $spacing-amount {
-    .m-#{$x} {
-        margin: #{$x}rem !important;
-    }
-
-    .mt-#{$x},
-    .my-#{$x} {
-        margin-top: #{$x}rem !important;
-    }
-
-    .mb-#{$x},
-    .my-#{$x} {
-        margin-bottom: #{$x}rem !important;
-    }
-
-    .ml-#{$x},
-    .mx-#{$x} {
-        margin-left: #{$x}rem !important;
-    }
-
-    .mr-#{$x},
-    .mx-#{$x} {
-        margin-right: #{$x}rem !important;
-    }
-}
-
-@each $y in $spacing-amount {
-    .p-#{$y} {
-        padding: #{$y}rem !important;
-    }
-
-    .pt-#{$y},
-    .py-#{$y} {
-        padding-top: #{$y}rem !important;
-    }
-
-    .pb-#{$y},
-    .py-#{$y} {
-        padding-bottom: #{$y}rem !important;
-    }
-
-    .pl-#{$y},
-    .px-#{$y} {
-        padding-left: #{$y}rem !important;
-    }
-
-    .pr-#{$y},
-    .px-#{$y} {
-        padding-right: #{$y}rem !important;
-    }
-}
-
 // Border
 
 .border {
@@ -85,27 +31,4 @@ $color in $cl-main {
     padding-left: 0;
 }
 
-// Text Utils
-.text-l {
-    text-align: left;
-}
-
-.text-c {
-    text-align: center;
-}
-
-.text-r {
-    text-align: right;
-}
-
-.text-j {
-    text-align: justify;
-}
-
-.text-up {
-    text-transform: uppercase;
-}
-
-.text-bold {
-    font-weight: bold;
-}
+@import 'utils/spacer', 'utils/text';
