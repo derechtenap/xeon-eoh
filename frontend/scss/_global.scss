@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-// Backgrounds
+// Backgrounds -----------------------------------------------------------
 
 @each $name,
 $color in $cl-main {
@@ -9,7 +9,7 @@ $color in $cl-main {
     }
 }
 
-// Text colors
+// Text colors -----------------------------------------------------------
 
 @each $name,
 $color in $cl-main {
@@ -18,13 +18,13 @@ $color in $cl-main {
     }
 }
 
-// Border
+// Border ----------------------------------------------------------------
 
 .border {
     border: 1px solid map-get($cl-main, dark);
 }
 
-// List
+// List ------------------------------------------------------------------
 
 .list-unstyled {
     list-style: none;
