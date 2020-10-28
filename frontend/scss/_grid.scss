@@ -1,8 +1,9 @@
 @charset 'UTF-8';
 
-// Container ------------------------------------
+// Container -------------------------------------------------------------
 // Basic container class
 // Uses 100% width at small breakpoint
+
 .container {
     width: 100%;
     max-width: calc(100% - 10rem);
@@ -14,14 +15,16 @@
     }
 }
 
-// Grid system ----------------------------------
+// Grid system -----------------------------------------------------------
+
 .row {
     display: flex;
     flex-wrap: wrap;
 }
 
-// Columns
+// Columns ---------------------------------------------------------------
 // Default: 12 cols per row
+
 @for $i from 1 through $cols {
     .col-#{$i} {
         flex: 0 0 100% / $cols * $i
@@ -33,6 +36,7 @@
 }
 
 // Set cols on small breakpoint to full width
+
 @media all and (max-width: map-get($breakpoints, "sma")) {
     [class*="col-"] {
         flex: 0 0 100%;
