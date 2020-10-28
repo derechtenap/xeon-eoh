@@ -1,7 +1,11 @@
 @charset 'UTF-8';
 @import '../variables';
 
-// Spacer
+// Spacer ----------------------------------------------------------------
+// Adds Margin and Padding classes. Inspired by the Bootstrap Framework
+// $spacing-amount can be changed in the _variables file 
+
+// Margin
 
 @each $x in $spacing-amount {
     .m-#{$x} {
@@ -28,6 +32,8 @@
         margin-right: #{$x}rem !important;
     }
 }
+
+// Padding
 
 @each $y in $spacing-amount {
     .p-#{$y} {
