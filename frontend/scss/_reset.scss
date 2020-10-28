@@ -32,6 +32,6 @@ progress[value] {
 }
 
 progress[value]::-webkit-progress-bar {
-    background-color: map-get($scheme, green);
+    background-color: map-get($cl-main, green);
 
 }
