@@ -1,0 +1,25 @@
+{
+    "id": 1,
+    "activ": false,
+    "tier": [
+        {
+                "name": "Bandit",
+                "base_attack": 5,
+                "base_hp": 100,
+                "xp": 10,
+                "weapon_pool": [
+                    "sword",
+                    "bow"
+                ],
+                "drop_pool": {
+                    "gold": {
+                        "item_id": 1,
+                        "percantage": 90,
+                        "min_amount": 1,
+                        "max_amount": 5
+                    }
+                },
+                "image": "../frontend/img/bandit.svg"
+        }
+    ]
+}

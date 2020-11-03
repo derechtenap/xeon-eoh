@@ -1,3 +1,6 @@
+var LINK_TO_GAME_ASSETS = "http://127.0.0.1:5500/frontend/assets/forest.json";
+var LINK_TO_ASSETS = "http://127.0.0.1:5500/frontend/assets/";
+
 var ENEMY_ONE_START_HEALTH = 10;
 var ENEMY_TWO_START_HEALTH = 10;
 var ENEMY_THREE_START_HEALTH = 10;
@@ -11,6 +14,7 @@ const DEATH_CONDITION_ENEMY = 1;
 
 //OnStart
 function initalize(){
+    loadGameAssets();
     addClickListener();
     initalizeProgressbar();
 }
@@ -33,6 +37,33 @@ function initalizeProgressbar(){
     
     var pThree = document.getElementById("progressEnemyThree");
     pThree.value = 100;
+}
+
+async function loadGameAssets(){
+    var levelAssets = await (await fetch(LINK_TO_GAME_ASSETS)).json();
+    loadEnemyAssets(levelAssets.spawnable_enemies);
+    console.log(levelAssets);
+
+    //Set enemy container background
+    //document.body.style.background = `url(${levelAssets.background_image})`;
+    var enemyContainer = document.getElementById("fight-main");
+    enemyContainer.style.background = `url(${levelAssets.background_image})`;
+
+    //Set dungeon amount
+    var allLevel = document.getElementById("level-count");
+    allLevel.innerHTML = levelAssets.dungeon_count;
+
+}
+
+async function loadEnemyAssets(enemyNameArray){
+    //console.log(enemyNameArray)
+    var enemy = await (await fetch(LINK_TO_ASSETS + enemyNameArray[0] + ".json")).json();
+
+    //Changing the enemy one img for now
+    var enemyOnePic = document.getElementById("enemyOne");
+    enemyOnePic.src = enemy.tier[0].image;
+
+    console.log(enemy);
 }
 
 function dealDamage(event){

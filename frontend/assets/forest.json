@@ -1,0 +1,12 @@
+{
+    "level_name": "Forest",
+    "level_desc": "Dark Forest very spooky",
+    "dungeon_count": 10,
+    "dungeon_names": [],
+    "rewards": [],
+    "background_image": "../frontend/img/forest.jpg",
+    "spawnable_enemies": [
+        "bandit",
+        "knight"
+    ]
+}
