@@ -1,62 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../frontend/css/xeon.min.css">
-    <script src="../frontend/js/fight.js" defer></script>
-    <script src="../frontend/js/profile.js" defer></script>
-    <title>Fight</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="../frontend/css/xeon.min.css">
+  <title>Fight</title>
 </head>
 
 <body class="row bg-brown p-3">
-    <main class="col-8 px-3">
-        <div class="border bg-green" id="fight-main">
-            <div class="row pt-1 px-1 bg-dark text-white">
-                <div class="col-6">
-                    <h1>&larr;</h1>
-                </div>
-                <div class="col-6 text-r">
-                    <h2>Progress: 1 / 10</h2>
-                </div>
-            </div>
-            <!-- ENV -->
-            <div id="enemy-container" class="row py-5">
-                <div class="col-4 px-1">
-                    <progress id="progressEnemyOne" style="width: 280px;" value="4" max="100"></progress>
-                    <img id="enemyOne" src="https://placehold.it/280x300" alt="Enemy" draggable="false">
-                </div>
-                <div class="col-4 px-1">
-                    <progress id="progressEnemyTwo" style="width: 280px;" value="6" max="100"></progress>
-                    <img id="enemyTwo" src="https://placehold.it/280x300" alt="Enemy" draggable="false">
-                </div>
-                <div class="col-4 px-1">
-                    <progress id="progressEnemyThree" style="width: 280px;" value="10" max="100"></progress>
-                    <img id="enemyThree" src="https://placehold.it/280x300" alt="Enemy" draggable="false">
-                </div>
-            </div>
+
+  <main class="col-8 px-3">
+    <div class="border bg-green" id="fight-main">
+      <div class="row pt-1 px-1 bg-dark text-white">
+        <div class="col-6">
+          <h1>&larr;</h1>
         </div>
-    </main>
-    <aside class="col-4 bg-dark-brown text-white border p-3" id="fight-aside">
-        <h2>Stats</h2>
-        <div class="row mb-1">
-            <div class="col-8">Level</div>
-            <div id="userLevel" class="col-4 text-r text-bold">1</div>
+        <div class="col-6 text-r">
+          <h2>Progress: 1 / 10</h2>
         </div>
-        <div class="row mb-1">
-            <div class="col-8">Attack</div>
-            <div id="userAttackDamage" class="col-4 text-r text-bold">1 DMG</div>
+      </div>
+      <!-- ENV -->
+      <div class="row py-5" id="enemy-container">
+        <div class="col-4 px-1">
+          <progress id="progressEnemyOne" value="4" max="100" style="width: 280px;"></progress>
+          <img id="enemyOne" src="https://placehold.it/280x300" alt="Enemy" draggable="false">
         </div>
-        <div class="row mb-1">
-            <div class="col-8">Healthpoints</div>
-            <div id="userHealth" class="col-4 text-r text-bold">25 HP</div>
+        <div class="col-4 px-1">
+          <progress id="progressEnemyTwo" value="6" max="100" style="width: 280px;"></progress>
+          <img id="enemyTwo" src="https://placehold.it/280x300" alt="Enemy" draggable="false">
         </div>
-        <div class="row mb-1">
-            <div class="col-8">Gold</div>
-            <div id="userGold" class="col-4 text-r text-bold">120 G</div>
+        <div class="col-4 px-1">
+          <progress id="progressEnemyThree" value="10" max="100" style="width: 280px;"></progress>
+          <img id="enemyThree" src="https://placehold.it/280x300" alt="Enemy" draggable="false">
         </div>
-    </aside>
+      </div>
+    </div>
+  </main>
+
+  <aside class="col-4 bg-dark-brown text-white border p-3" id="fight-aside">
+    <h2>Stats</h2>
+    <div class="row mb-1">
+      <div class="col-8">Level</div>
+      <div class="col-4 text-r text-bold" id="userLevel">1</div>
+    </div>
+    <div class="row mb-1">
+      <div class="col-8">Attack</div>
+      <div class="col-4 text-r text-bold" id="userAttackDamage">1 DMG</div>
+    </div>
+    <div class="row mb-1">
+      <div class="col-8">Healthpoints</div>
+      <div class="col-4 text-r text-bold" id="userHealth">25 HP</div>
+    </div>
+    <div class="row mb-1">
+      <div class="col-8">Gold</div>
+      <div class="col-4 text-r text-bold" id="userGold">120 G</div>
+    </div>
+  </aside>
+
+  <script src="../frontend/js/fight.js"></script>
+  <script src="../frontend/js/profile.js"></script>
 </body>
 
 </html>
