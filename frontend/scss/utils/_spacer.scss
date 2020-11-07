@@ -3,60 +3,60 @@
 
 // Spacer ----------------------------------------------------------------
 // Adds Margin and Padding classes. Inspired by the Bootstrap Framework
-// $spacing-amount can be changed in the _variables file 
+// $spacing-amount can be changed in the _variables file
 
 // Margin
 
 @each $x in $spacing-amount {
-    .m-#{$x} {
-        margin: #{$x}rem !important;
-    }
+  .m-#{$x} {
+    margin: #{$x}rem !important;
+  }
 
-    .mt-#{$x},
-    .my-#{$x} {
-        margin-top: #{$x}rem !important;
-    }
+  .mt-#{$x},
+  .my-#{$x} {
+    margin-top: #{$x}rem !important;
+  }
 
-    .mb-#{$x},
-    .my-#{$x} {
-        margin-bottom: #{$x}rem !important;
-    }
+  .mb-#{$x},
+  .my-#{$x} {
+    margin-bottom: #{$x}rem !important;
+  }
 
-    .ml-#{$x},
-    .mx-#{$x} {
-        margin-left: #{$x}rem !important;
-    }
+  .ml-#{$x},
+  .mx-#{$x} {
+    margin-left: #{$x}rem !important;
+  }
 
-    .mr-#{$x},
-    .mx-#{$x} {
-        margin-right: #{$x}rem !important;
-    }
+  .mr-#{$x},
+  .mx-#{$x} {
+    margin-right: #{$x}rem !important;
+  }
 }
 
 // Padding
 
 @each $y in $spacing-amount {
-    .p-#{$y} {
-        padding: #{$y}rem !important;
-    }
+  .p-#{$y} {
+    padding: #{$y}rem !important;
+  }
 
-    .pt-#{$y},
-    .py-#{$y} {
-        padding-top: #{$y}rem !important;
-    }
+  .pt-#{$y},
+  .py-#{$y} {
+    padding-top: #{$y}rem !important;
+  }
 
-    .pb-#{$y},
-    .py-#{$y} {
-        padding-bottom: #{$y}rem !important;
-    }
+  .pb-#{$y},
+  .py-#{$y} {
+    padding-bottom: #{$y}rem !important;
+  }
 
-    .pl-#{$y},
-    .px-#{$y} {
-        padding-left: #{$y}rem !important;
-    }
+  .pl-#{$y},
+  .px-#{$y} {
+    padding-left: #{$y}rem !important;
+  }
 
-    .pr-#{$y},
-    .px-#{$y} {
-        padding-right: #{$y}rem !important;
-    }
+  .pr-#{$y},
+  .px-#{$y} {
+    padding-right: #{$y}rem !important;
+  }
 }
