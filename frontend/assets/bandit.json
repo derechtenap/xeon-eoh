@@ -4,7 +4,7 @@
     "tier": [
         {
                 "name": "Bandit",
-                "base_attack": 5,
+                "base_attack": 10,
                 "base_hp": 100,
                 "xp": 10,
                 "weapon_pool": [
@@ -16,7 +16,15 @@
                         "item_id": 1,
                         "percantage": 90,
                         "min_amount": 1,
-                        "max_amount": 5
+                        "max_amount": 5,
+                        "image": "..."
+                    },
+                    "healthPotion":{
+                        "item_id": 2,
+                        "percantage": 50,
+                        "min_amount": 1,
+                        "max_amount": 3,
+                        "image": "..."
                     }
                 },
                 "image": "../frontend/img/bandit.svg"
