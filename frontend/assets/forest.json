@@ -4,7 +4,7 @@
     "dungeon_count": 10,
     "dungeon_names": [],
     "rewards": [],
-    "background_image": "../frontend/img/forest.jpg",
+    "background_image": "../frontend/img/forest.svg",
     "spawnable_enemies": [
         "bandit",
         "knight"

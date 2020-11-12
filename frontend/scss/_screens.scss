@@ -4,6 +4,9 @@
 #fight-main,
 #fight-aside {
   // Remove padding
-
   min-height: calc(100vh - 6rem);
+}
+
+.enemyProgress {
+  width: 100%;
 }
