@@ -50,7 +50,11 @@ async function loadGameAssets(){
 
     //Set enemy container background
     var enemyContainer = document.getElementById("fight-main");
-    enemyContainer.style.background = `url(${levelAssets.background_image})`;
+
+    // Set background with CSS styles
+    enemyContainer.style.background = `center url(${levelAssets.background_image})`;
+    enemyContainer.style.backgroundSize = "cover";
+    enemyContainer.style.backgroundPosition = "bottom";
 
     //Set dungeon amount
     var allLevel = document.getElementById("level-count");
