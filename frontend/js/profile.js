@@ -7,7 +7,6 @@ var gold = 99;
 
 //On Start
 function initalize(){
-    console.log("Hello Profile here");
 
     //Load User Stats
 

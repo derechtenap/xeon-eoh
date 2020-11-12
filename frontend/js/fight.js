@@ -1,93 +1,145 @@
-var ENEMY_ONE_START_HEALTH = 10;
-var ENEMY_TWO_START_HEALTH = 10;
-var ENEMY_THREE_START_HEALTH = 10;
+var LINK_TO_GAME_ASSETS = "../frontend/assets/forest.json"
+var LINK_TO_ASSETS = "../frontend/assets/";
 
+const DEATH_CONDITION_ENEMY = 0;
 
-var healthEnemyOne = 10;
-var healthEnemyTwo = 10;
-var healthEnemyThree = 10;
+var enemyOne = {
+    startingHealth: 0.0,
+    currentHealth: 0.0,
+    damage: 0.0,
+    healthbarAnchor:"",
+    imgAnchor:""
+}
+var enemyTwo = {
+    startingHealth: 0.0,
+    currentHealth: 0.0,
+    damage: 0.0,
+    healthbarAnchor:"",
+    imgAnchor:""
+}
+var enemyThree = {
+    startingHealth: 0.0,
+    currentHealth: 0.0,
+    damage: 0.0,
+    healthbarAnchor:"",
+    imgAnchor:""
+}
+//EnemyOne with HTML-Anchors
+enemyOne.imgAnchor = document.getElementById("enemyOne");
+enemyOne.healthbarAnchor = document.getElementById("progressEnemyOne");
 
-const DEATH_CONDITION_ENEMY = 1;
+//EnemyTwo with HTML-Anchors
+enemyTwo.imgAnchor = document.getElementById("enemyTwo");
+enemyTwo.healthbarAnchor = document.getElementById("progressEnemyTwo");
+
+//EnemyThree with HTML-Anchors
+enemyThree.imgAnchor = document.getElementById("enemyThree");
+enemyThree.healthbarAnchor = document.getElementById("progressEnemyThree");
 
 //OnStart
 function initalize(){
+    loadGameAssets();
     addClickListener();
     initalizeProgressbar();
 }
 initalize();
 
+async function loadGameAssets(){
+    var levelAssets = await (await fetch(LINK_TO_GAME_ASSETS)).json();
+    loadEnemyAssets(levelAssets.spawnable_enemies);
+
+    //Set enemy container background
+    var enemyContainer = document.getElementById("fight-main");
+    enemyContainer.style.background = `url(${levelAssets.background_image})`;
+
+    //Set dungeon amount
+    var allLevel = document.getElementById("level-count");
+    allLevel.innerHTML = levelAssets.dungeon_count;
+
+}
+
+async function loadEnemyAssets(enemyNameArray){
+    var enemy = await (await fetch(LINK_TO_ASSETS + enemyNameArray[0] + ".json")).json();
+
+    //EnemyOne
+    enemyOne.startingHealth = enemy.tier[0].base_hp;
+    enemyOne.damage         = enemy.tier[0].base_attack;
+    enemyOne.currentHealth  = enemyOne.startingHealth;
+    enemyOne.imgAnchor.src = enemy.tier[0].image;
+
+    //EnemyTwo
+    enemyTwo.startingHealth = enemy.tier[0].base_hp;
+    enemyTwo.damage         = enemy.tier[0].base_attack;
+    enemyTwo.currentHealth  = enemyTwo.startingHealth;
+    enemyTwo.imgAnchor.src = enemy.tier[0].image;
+
+    //EnemyThree
+    enemyThree.startingHealth = enemy.tier[0].base_hp;
+    enemyThree.damage         = enemy.tier[0].base_attack;
+    enemyThree.currentHealth  = enemyThree.startingHealth;
+    enemyThree.imgAnchor.src = enemy.tier[0].image;
+}
+
 //Add click listener to enemy pictures
 function addClickListener(){
-    document.getElementById("enemyOne").addEventListener("click", dealDamage);
-    document.getElementById("enemyTwo").addEventListener("click", dealDamage);
-    document.getElementById("enemyThree").addEventListener("click", dealDamage);
+    enemyOne.imgAnchor.addEventListener("click", dealDamage);
+    enemyTwo.imgAnchor.addEventListener("click", dealDamage);
+    enemyThree.imgAnchor.addEventListener("click", dealDamage);
 }
 
 //set HealthProgressbar
 function initalizeProgressbar(){
-    var pOne = document.getElementById("progressEnemyOne");
-    pOne.value = 100;
-    
-    var pTwo = document.getElementById("progressEnemyTwo");
-    pTwo.value = 100;
-    
-    var pThree = document.getElementById("progressEnemyThree");
-    pThree.value = 100;
+    enemyOne.healthbarAnchor.value = 100;
+    enemyTwo.healthbarAnchor.value = 100;
+    enemyThree.healthbarAnchor.value = 100;
 }
 
 function dealDamage(event){
     showHitmarker();
 
-     if("enemyOne" == event.target.id){
-        if(healthEnemyOne > DEATH_CONDITION_ENEMY){
-            healthEnemyOne--;
-            updateProgressBar("One", 10);
-            console.log(`Enemy One HP: ${healthEnemyOne}`);
-        }else{
-            console.log(`Enemy One died!`);
-            //Delete Image and progressbar
-            var img = document.getElementById(event.target.id);
-            img.parentNode.removeChild(img);
-            var progressbar = document.getElementById("progressEnemyOne");
-            progressbar.style.display ="none";
-        }   
+   if("enemyOne" == event.target.id){
+       if((enemyOne.currentHealth - enemyOne.damage) > DEATH_CONDITION_ENEMY){
+            enemyOne.currentHealth -= enemyOne.damage;
+            enemyOne.healthbarAnchor.value = calculateHealthBarValue(enemyOne, enemyOne);
+       }
+       else{
+        //Delete Image and progressbar
+        enemyOne.imgAnchor.style.display = "none";
+        enemyOne.healthbarAnchor.style.display = "none";        
+       }
+   }
+   else if("enemyTwo" == event.target.id){
+        if((enemyTwo.currentHealth - enemyTwo.damage) > DEATH_CONDITION_ENEMY){
+            enemyTwo.currentHealth -= enemyTwo.damage;
+            enemyTwo.healthbarAnchor.value = calculateHealthBarValue(enemyTwo, enemyTwo);
+        }
+        else{
+        //Delete Image and progressbar
+        enemyTwo.imgAnchor.style.display = "none";
+        enemyTwo.healthbarAnchor.style.display = "none";        
+        }
     }
-
-    if("enemyTwo" == event.target.id){
-        if(healthEnemyTwo > DEATH_CONDITION_ENEMY){
-            healthEnemyTwo--;
-            updateProgressBar("Two", 10);
-        }else{
-            //Delete Image and progressbar
-            var img = document.getElementById(event.target.id);
-            img.parentNode.removeChild(img);
-            var progressbar = document.getElementById("progressEnemyTwo");
-            progressbar.style.display ="none";
-        }   
-    }
-
-    if("enemyThree" == event.target.id){
-        if(healthEnemyThree > DEATH_CONDITION_ENEMY){
-            healthEnemyThree--;
-            updateProgressBar("Three", 10);
-        }else{
-            //Delete Image and progressbar
-            var img = document.getElementById(event.target.id);
-            img.parentNode.removeChild(img);
-            var progressbar = document.getElementById("progressEnemyThree");
-            progressbar.style.display ="none";
-        }   
+    else if("enemyThree" == event.target.id){
+        if((enemyThree.currentHealth - enemyThree.damage) > DEATH_CONDITION_ENEMY){
+            enemyThree.currentHealth -= enemyThree.damage;
+            enemyThree.healthbarAnchor.value = calculateHealthBarValue(enemyThree, enemyThree);
+        }
+        else{
+        //Delete Image and progressbar
+        enemyThree.imgAnchor.style.display = "none";
+        enemyThree.healthbarAnchor.style.display = "none";        
+        }
     }
 }
 
+function calculateHealthBarValue(player, enemy){
+    var damageInPercent = (enemy.damage / enemy.startingHealth) * 100;
+    healthBarValue = enemy.healthbarAnchor.value - damageInPercent;
 
-function updateProgressBar(name,damageAmount){
-    var bar = document.getElementById("progressEnemy" + name);
-    bar.value -= damageAmount;
+    return healthBarValue;
 }
 
-
-function showHitmarker(){ // Change the cursor as long as mouse is pressed
+function showHitmarker(){
     window.onmousedown = () =>{
         document.body.style.cursor = "cell";
     }

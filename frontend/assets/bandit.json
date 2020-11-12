@@ -1,0 +1,33 @@
+{
+    "id": 1,
+    "activ": false,
+    "tier": [
+        {
+                "name": "Bandit",
+                "base_attack": 10,
+                "base_hp": 100,
+                "xp": 10,
+                "weapon_pool": [
+                    "sword",
+                    "bow"
+                ],
+                "drop_pool": {
+                    "gold": {
+                        "item_id": 1,
+                        "percantage": 90,
+                        "min_amount": 1,
+                        "max_amount": 5,
+                        "image": "..."
+                    },
+                    "healthPotion":{
+                        "item_id": 2,
+                        "percantage": 50,
+                        "min_amount": 1,
+                        "max_amount": 3,
+                        "image": "..."
+                    }
+                },
+                "image": "../frontend/img/bandit.svg"
+        }
+    ]
+}
