@@ -10,3 +10,7 @@
 .enemyProgress {
   width: 100%;
 }
+
+#enemy-container>img {
+  user-select: none;
+}
