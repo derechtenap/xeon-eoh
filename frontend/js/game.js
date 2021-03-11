@@ -5,11 +5,12 @@ const CTX = CANVAS.getContext('2d');
 const WIDTH = CANVAS.width;
 const HEIGHT = CANVAS.height;
 
-let debug = false;
+let debug = true;
 
 let secondsPassed;
 let oldTimeStamp;
 let fps;
+let gameState = 0;
 
 window.onload = init();
 
@@ -31,15 +32,15 @@ function loop(timeStamp) {
 function draw() {
     CTX.clearRect(0, 0, WIDTH, HEIGHT); // Reset canvas frame
     if (debug) {
-        CTX.font = '30px Arial';
+        CTX.font = '15px Arial';
         CTX.fillStyle = 'white';
         CTX.textAlign = 'left';
-        CTX.fillText(`fps=${fps}`, 5, 30);
+        CTX.fillText(`fps=${fps}, gameState=${gameState}`, 2, 15);
     }
 }
 
 CANVAS.addEventListener('keypress', (e) => {
-    if(e.code === 'Digit1' && debug === false) {
+    if (e.code === 'Digit1' && debug === false) {
         debug = true;
     } else {
         debug = false;
