@@ -1,4 +1,5 @@
 @charset 'UTF-8';
+$base-size: 16px; // Font base size
 
 *,
 *::before,
@@ -11,8 +12,22 @@ html {
 }
 
 body {
+    font-size: $base-size;
     padding: 0;
     margin: 0;
-    width: 100vw;
-    height: 100vh;
+}
+
+@for $i from 1 through 6 {
+
+    h#{$i},
+    .h#{$i} {
+        // Each Heading is 25% smaller than his predecessor
+        // For example, <h1> is 25% bigger than <h2>
+        font-size: $base-size * (2.5 - ($i * 0.25));
+    }
+}
+
+.lead {
+    font-size: $base-size * 1.25; // Equals <h6> font size
+    font-weight: bold;
 }
