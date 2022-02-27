@@ -25,7 +25,6 @@ class DirectionInput {
 
             if (dir && this.heldDirections.indexOf(dir) === -1) {
                 this.heldDirections.unshift(dir);
-                console.info(this.heldDirections);
             }
         });
 
@@ -35,7 +34,6 @@ class DirectionInput {
 
             if (index > -1) {
                 this.heldDirections.splice(index, 1);
-                console.info(this.heldDirections);
             }
         });
     }
